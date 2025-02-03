@@ -6,4 +6,32 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
+<p>Do you enjoy C#?</p>
+
+<fieldset>
+    <legend>Manufacturer</legend>
+    <InputRadioGroup @bind-Value="@Anwsers">
+        @foreach (var anwser in Anwsers)
+        {
+            <div>
+                <label>
+                    <InputRadio Value="anwser"/>
+                    @anwser
+                </label>
+            </div>
+        }
+    </InputRadioGroup>
+</fieldset>
+
+
+
+@code{
+    private List<string> Anwsers { get; set; } = new List<string>();
+
+    protected override void OnInitialized()
+    {
+        Anwsers.Add("yes");
+        Anwsers.Add("no");
+    }
+}
