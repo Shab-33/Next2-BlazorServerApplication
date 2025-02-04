@@ -1,0 +1,21 @@
+﻿@page "/Register"
+@layout LoginLayout
+<div class="centre-content container-centre">
+    <h1>Register</h1>
+    <p class="margin-t-50">Enter your email address and create a password to create your profile. Once your identity is confirmed, you will be able to manage your profile.</p>
+    <label class="required-field margin-t-50">Email Address:</label>
+    <InputText class="auth-input" @bind-Value="@username"></InputText>
+    <label class="required-field">Password:</label>
+    <InputText class="auth-input" @bind-Value="@password"></InputText>
+    <label class="required-field">Confirm password:</label>
+    <InputText class="auth-input" @bind-Value="@password"></InputText>
+    
+    <button class="white-button margin-t-50">Register</button>
+</div>
+
+
+@code {
+	private string username;
+	private string password;
+
+}

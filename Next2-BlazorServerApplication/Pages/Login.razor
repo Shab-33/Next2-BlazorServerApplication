@@ -1,27 +1,15 @@
 ﻿@page "/Login"
 @layout LoginLayout
-	<div id="login-container">
-		<div class="title">
-			<h1>Login</h1>
-		</div>
-		<div class="login-description">
-			<h3>Enter the email address and password you used to create your profile.
-				Once your identity is confirmed, you will be able to manage your profile.</h3>
-		</div>
-		<div class="input-field-container">
-			<div class="input-field">
-				<label class="required-field">Email Address</label>
-				<InputText class="text-box" @bind-Value="@username"></InputText>
-			</div>
+	<div class="centre-content container-centre">
+    <h1>Log In</h1>
+    <p class="margin-t-50">Enter the email address and password you used to create your profile. Once your identity is confirmed, you will be able to manage your profile.</p>
+    <label class="required-field margin-t-50">Email Address:</label>
+    <InputText class="auth-input" @bind-Value="@username"></InputText>
+    <label class="required-field">Password:</label>
+    <InputText class="auth-input" @bind-Value="@password"></InputText>
 
-			<div class="input-field">
-				<label class="required-field">Password</label>
-				<InputText class="text-box" @bind-Value="@password"></InputText>
-			</div>
-			<button class="button">Login</button>
-		</div>
-
-	</div>
+    <button class="white-button margin-t-50">Log in</button>
+</div>
 
 
 @code {
