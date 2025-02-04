@@ -1,0 +1,31 @@
+﻿@page "/Login"
+@layout LoginLayout
+	<div id="login-container">
+		<div class="title">
+			<h1>Login</h1>
+		</div>
+		<div class="login-description">
+			<h3>Enter the email address and password you used to create your profile.
+				Once your identity is confirmed, you will be able to manage your profile.</h3>
+		</div>
+		<div class="input-field-container">
+			<div class="input-field">
+				<label class="required-field">Email Address</label>
+				<InputText class="text-box" @bind-Value="@username"></InputText>
+			</div>
+
+			<div class="input-field">
+				<label class="required-field">Password</label>
+				<InputText class="text-box" @bind-Value="@password"></InputText>
+			</div>
+			<button class="button">Login</button>
+		</div>
+
+	</div>
+
+
+@code {
+	private string username;
+	private string password;
+
+}
