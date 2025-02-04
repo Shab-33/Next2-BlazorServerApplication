@@ -36,6 +36,11 @@ body {
 h1 {
 }
 
+.button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
 .white-button {
     background: none;
     border: 1px solid #000000;
