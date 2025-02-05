@@ -39,6 +39,7 @@ h1 {
 .button-container{
     display: flex;
     justify-content: space-between;
+    height: 100px;
 }
 
 .white-button {
@@ -48,9 +49,9 @@ h1 {
     padding: 10px;
 }
 
-    .white-button:hover {
-        border: 2px solid #000000;
-    }
+.white-button:hover {
+    border: 2px solid #000000;
+}
 
 .auth-input {
     background-color: var(--auth-input-background);
