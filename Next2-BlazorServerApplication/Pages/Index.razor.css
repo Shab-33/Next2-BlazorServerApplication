@@ -1,3 +1,11 @@
-﻿.test {
-    font-size : 50px;
+﻿.container-centre {
+    width: 750px;
+    max-width: 60vw;
+}
+
+.white-button {
+    height: 80px;
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
 }

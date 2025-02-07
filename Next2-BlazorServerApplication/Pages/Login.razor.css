@@ -1,6 +1,7 @@
 ﻿.container-centre {
     width: 750px;
+    max-width: 60vw;
 }
 .white-button{
-    width: 15%;
+    width: 115px;
 }
