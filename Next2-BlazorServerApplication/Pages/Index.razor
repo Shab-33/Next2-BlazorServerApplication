@@ -2,36 +2,14 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-
-<p>Do you enjoy C#?</p>
-
-<fieldset>
-    <legend>Manufacturer</legend>
-    <InputRadioGroup @bind-Value="@Anwsers">
-        @foreach (var anwser in Anwsers)
-        {
-            <div>
-                <label>
-                    <InputRadio Value="anwser" />
-                    @anwser
-                </label>
-            </div>
-        }
-    </InputRadioGroup>
-</fieldset>
+<div class="centre-content container-centre">
+    <h1>Next Career Quiz</h1>
+    <p class="margin-t-50">Take 5-10 minutes to answer a set of questions specifically designed to help you understand which position is best suitable for you to apply to</p>
+    <button class="white-button margin-t-50">Start Quiz</button>
+    <a href="Login" class="margin-t-50 auth-a">Already completed the Next Career Quiz? Log in to see your results</a>
+</div>
 
 
 
 @code{
-    private List<string> Anwsers { get; set; } = new List<string>();
-
-    protected override void OnInitialized()
-    {
-        Anwsers.Add("yes");
-        Anwsers.Add("no");
-    }
 }

@@ -1,7 +1,10 @@
 ﻿.container-centre {
     width: 750px;
+    max-width: 60vw;
 }
-
+.white-button {
+    width: 115px;
+}
 /*.auth-input {
     width: 680px;
     height: 56px;
