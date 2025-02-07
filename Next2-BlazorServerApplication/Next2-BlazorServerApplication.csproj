@@ -15,4 +15,10 @@
   <ItemGroup>
     <Folder Include="Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\NextCareersLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\NextCareersLogo.png" />
+  </ItemGroup>
 </Project>
