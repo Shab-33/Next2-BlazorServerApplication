@@ -1,19 +1,20 @@
 ﻿@page "/Register"
-@layout LoginLayout
+@layout MainLayout
 <div class="centre-content container-centre">
     <h1>Register</h1>
     <p class="margin-t-50">Enter your email address and create a password to create your profile. Once your identity is confirmed, you will be able to manage your profile.</p>
-    <label class="required-field margin-t-50">Email Address:</label>
+    <label class="required-field margin-t-50 text-l">Email Address:</label>
     <InputText class="auth-input" @bind-Value="@username"></InputText>
-    <label class="required-field">Password:</label>
+    <label class="required-field text-l">Password:</label>
     <InputText class="auth-input" @bind-Value="@password"></InputText>
-    <label class="required-field">Confirm password:</label>
+    <label class="required-field text-l">Confirm password:</label>
     <InputText class="auth-input" @bind-Value="@password"></InputText>
     <a href="Login" class="margin-t-50 auth-a">Already have an account? <span style="text-decoration:underline; font-weight:bold;">Log in</span></a>
     <div class="container-space-between height-100">
         <button class="white-button margin-t-50"><i class="fa-solid fa-caret-left"></i> Back</button>
         <button class="white-button margin-t-50">Register <i class="fa-solid fa-caret-right"></i></button>
     </div>
+    <br />
 </div>
 
 
