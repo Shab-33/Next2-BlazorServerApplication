@@ -20,6 +20,9 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--background-grey);
+    transform: scale(0.9);
+    transform-origin: top left;
+    width: 111%;
 }
 
 .container-centre {
@@ -43,16 +46,21 @@ h1 {
 
 
 
-.white-button {
+.white-button, .white-button-selected{
     background: none;
     border: 1px solid #000000;
     border-radius: var(--radius);
     padding: 10px;
 }
 
-.white-button:hover {
+.white-button:hover, .white-button-selected:hover {
     border: 2px solid #000000;
     padding: 9px;
+    cursor: pointer;
+}
+
+.white-button-selected {
+    background-color: var(--background-grey);
 }
 
 .auth-input {
@@ -81,7 +89,7 @@ h1 {
     font-weight: bold;
 }
 
-label {
+.text-l {
     text-align: left;
 }
 
