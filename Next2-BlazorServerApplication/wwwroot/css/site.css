@@ -53,14 +53,18 @@ h1 {
     padding: 10px;
 }
 
+    .white-button:hover {
+        border: 2px solid #203C41;
+        padding: 9px;
+    }
+
 .white-button:hover, .white-button-selected:hover {
-    border: 2px solid #000000;
-    padding: 9px;
     cursor: pointer;
 }
 
 .white-button-selected {
-    background-color: var(--background-grey);
+    background-color: #00829b20;
+    border: 2px solid var(--button-blue-hover);
 }
 
 .auth-input {
