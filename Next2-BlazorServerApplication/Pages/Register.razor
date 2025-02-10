@@ -1,25 +1,81 @@
-﻿@page "/Register"
+﻿@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Components.Web
+@using Next2_BlazorServerApplication.Data
+@using static Microsoft.AspNetCore.Components.Web.RenderMode
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@inject NavigationManager MyNavigationManager
+@page "/Register"
 @layout MainLayout
+@* @rendermode InteractiveServer *@
+
+
 <div class="centre-content container-centre">
     <h1>Register</h1>
+    <section>
+
+    <EditForm Model="Input" method="post" OnValidSubmit="RegisterUser" FormName="Register">
+    <DataAnnotationsValidator/>
     <p class="margin-t-50">Enter your email address and create a password to create your profile. Once your identity is confirmed, you will be able to manage your profile.</p>
     <label class="required-field margin-t-50 text-l">Email Address:</label>
-    <InputText class="auth-input" @bind-Value="@username"></InputText>
+    <InputText class="auth-input" @bind-Value="Input.Email"></InputText>
     <label class="required-field text-l">Password:</label>
-    <InputText class="auth-input" @bind-Value="@password"></InputText>
+    <InputText class="auth-input" @bind-Value="@Input.Password"></InputText>
     <label class="required-field text-l">Confirm password:</label>
-    <InputText class="auth-input" @bind-Value="@password"></InputText>
+    <InputText class="auth-input" @bind-Value="@Input.ConfirmPassword"></InputText>
     <a href="Login" class="margin-t-50 auth-a">Already have an account? <span style="text-decoration:underline; font-weight:bold;">Log in</span></a>
     <div class="container-space-between height-100">
         <button class="white-button margin-t-50"><i class="fa-solid fa-caret-left"></i> Back</button>
         <button class="white-button margin-t-50">Register <i class="fa-solid fa-caret-right"></i></button>
     </div>
+    </EditForm>
+    </section>
     <br />
 </div>
 
 
 @code {
-	private string username;
-	private string password;
+    //[Parameter]
+    [SupplyParameterFromForm(FormName = "Register")]
+    public InputModel Input { get; set; } = new();
+
+    public void RegisterUser()
+    {
+        bool result = AppDBContext.SaveUser
+        (
+            new User
+            {
+                Email = Input.Email,
+                Password = Input.Password,
+                ConfirmPassword = Input.ConfirmPassword
+            }
+        );
+        if (result)
+        {
+            //success
+        }
+        else
+        {
+            //fail
+        }
+    }
+
+    public sealed class InputModel
+    {
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; } = "";
+
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; } = "";
+        
+        [Required]
+        [DataType(DataType.Password)]
+        public string ConfirmPassword { get; set; } = "";
+
+    }
 
 }
