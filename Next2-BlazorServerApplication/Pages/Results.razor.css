@@ -1,0 +1,40 @@
+﻿.container-centre {
+    width: 850px;
+    max-width: 60vw;
+}
+
+.white-container {
+    padding: 25px;
+    border-radius: 25px;
+}
+
+.white-button{
+    width: 115px;
+}
+
+.compatibility-bar {
+    height: 200px;
+    width: 200px;
+    background: conic-gradient(#90E596 270deg, white 0deg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compatibility-bar::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: white;
+    border-radius: 50%;
+}
+
+.percent {
+    z-index: 10;
+}
+
+.container-space-between {
+    align-items: center;
+}
