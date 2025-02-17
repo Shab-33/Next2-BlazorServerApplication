@@ -3,25 +3,25 @@
 
 <h3>answer table</h3>
 
-@if (Answers == null)
+@if (answers == null)
 {
     <p>empty</p>
 }
-@else
+else
 {
-    @foreach (var answer in Answers)
+    @foreach (var answer in answers)
     {
-        <ul>@answer.answer_id</ul>
+        <ul>@answer.Id</ul>
     }
 }
 
 
 @code {
-    private List<User> users;
+    private List<Answer> answers;
 
     protected override async Task OnInitializedAsync()
     {
-        users = await DbContext.Users.ToListAsync();
+        answers = await DbContext.Answers.ToListAsync();
     }
 }
 
