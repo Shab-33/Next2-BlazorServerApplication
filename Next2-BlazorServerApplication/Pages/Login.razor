@@ -1,5 +1,11 @@
 ﻿@page "/Login"
 @layout MainLayout
+@using Next2_BlazorServerApplication.Data
+@inject NavigationManager Navigation
+@inject ApplicationDbContext DbContext
+@rendermode InteractiveServer
+
+
 <div class="centre-content container-centre margin-t-50">
     <h1>Log In</h1>
     <p class="margin-t-50">Enter the email address and password you used to create your profile. Once your identity is confirmed, you will be able to manage your profile.</p>
@@ -15,14 +21,38 @@
         <a href="" class="white-button margin-t-50 no-link">
             <i class="fa-solid fa-caret-left"></i> Back
         </a>
-        <button class="white-button margin-t-50">Log in <i class="fa-solid fa-caret-right"></i></button>
+        <button class="white-button margin-t-50" @onclick="logIn" >Log in <i class="fa-solid fa-caret-right"></i></button>
     </div>
     <br />
 </div>
 
 
 @code {
-	private string username;
-	private string password;
+    public string username;
+    public string password;
+    private List<User> users;
 
+    protected override void OnInitialized()
+    {
+        users = DbContext.Users.ToList();
+    }
+
+    protected void logIn()
+    {
+        if (username != "" || password != "")
+        {
+            foreach (User user in users)
+            {
+                if (user.Email == username && user.PasswordHash == password)
+                {
+                    Navigation.NavigateTo($"/results{user.userID}");
+                }
+                Navigation.NavigateTo("/Register");
+            }
+        }
+        else
+        {
+            Navigation.NavigateTo("/Quiz");
+        }
+    }
 }
