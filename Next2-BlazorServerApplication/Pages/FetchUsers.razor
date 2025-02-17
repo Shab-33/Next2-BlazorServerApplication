@@ -1,0 +1,27 @@
+﻿@page "/FetchUsers"
+@inject AppDbContext DbContext
+
+<h3>answer table</h3>
+
+@if (answers == null)
+{
+    <p>empty</p>
+}
+else
+{
+    @foreach (var answer in answers)
+    {
+        <ul>@answer.Id</ul>
+    }
+}
+
+
+@code {
+    private List<Answer> answers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        answers = await DbContext.Answers.ToListAsync();
+    }
+}
+
