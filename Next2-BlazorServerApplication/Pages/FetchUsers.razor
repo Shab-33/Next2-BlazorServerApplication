@@ -1,19 +1,20 @@
-﻿@*@inject AppDbContext DbContext*@
+﻿@page "/FetchUsers"
+@*@inject AppDbContext DbContext*@
 
 <h3>answer table</h3>
 
 @*@if (Answers == null)
-{
-    <p>empty</p>
-
-}
-@else
-{
-    @foreach (var answer in Answers)
     {
-        <ul>@answer.answer_id</ul>
+        <p>empty</p>
+
     }
-}*@
+    @else
+    {
+        @foreach (var answer in Answers)
+        {
+            <ul>@answer.answer_id</ul>
+        }
+    }*@
 
 
 @code {
