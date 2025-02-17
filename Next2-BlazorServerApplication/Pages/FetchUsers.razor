@@ -1,8 +1,8 @@
-﻿@inject AppDbContext DbContext
+﻿@*@inject AppDbContext DbContext*@
 
 <h3>answer table</h3>
 
-@if (Answers == null)
+@*@if (Answers == null)
 {
     <p>empty</p>
 
@@ -13,7 +13,7 @@
     {
         <ul>@answer.answer_id</ul>
     }
-}
+}*@
 
 
 @code {
