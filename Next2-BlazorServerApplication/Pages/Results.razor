@@ -1,8 +1,8 @@
-﻿@page "/Results"
+﻿@page "/Results/{userID}"
 @layout MainLayout
 
 <div class="centre-content container-centre margin-t-50">
-    <h1 class="text-l">Results</h1>
+    <h1 class="text-l">Results @userID</h1>
     <div class="white-container container-flex">
         <div class="compatibility-bar">
             <div class="percent">
@@ -72,6 +72,6 @@
 </div>
 
 @code {
-
+    [Parameter] public string userID { get; set; }
 }
 

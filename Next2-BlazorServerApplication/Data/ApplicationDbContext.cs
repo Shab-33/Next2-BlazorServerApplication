@@ -9,7 +9,8 @@ namespace Next2_BlazorServerApplication.Data
 
 		public DbSet<Question> Questions { get; set; }
 		public DbSet<Answer> Answers { get; set; }
-	}
+        public DbSet<User> Users { get; set; }
+    }
 
 
 }
@@ -28,4 +29,13 @@ public class Answer
     public int QuestionID { get; set; }
     public string AnswerText { get; set; }
     public int? NextQuestionID { get; set; }
+}
+
+public class User
+{
+    public int userID { get; set; }
+    public string FullName { get; set; }
+    public string Email { get; set; }
+    public string Role { get; set; }
+    public string PasswordHash { get; set; }
 }
