@@ -1,5 +1,5 @@
 ﻿@page "/FetchUsers"
-@inject AppDbContext DbContext
+@inject ApplicationDbContext DbContext 
 
 <h3>answer table</h3>
 
@@ -9,10 +9,13 @@
 }
 else
 {
-    @foreach (var answer in answers)
-    {
-        <ul>@answer.Id</ul>
-    }
+    <ul>
+        @foreach (var answer in answers)
+        {
+            <li>@answer.AnswerID</li>
+        }
+    </ul>
+    
 }
 
 
@@ -21,7 +24,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        answers = await DbContext.Answers.ToListAsync();
+        answers = DbContext.Answers.ToList();
     }
 }
 
