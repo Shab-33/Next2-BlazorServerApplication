@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
-using Next2_BlazorServerApplication.Data;
+using Next2_BlazorServerApplication.Pages;
+//using Next2_BlazorServerApplication.Data;
 
 
 var builder = WebApplication.CreateBuilder(args);
