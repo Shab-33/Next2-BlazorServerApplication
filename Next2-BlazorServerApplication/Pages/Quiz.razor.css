@@ -44,3 +44,66 @@
     background: #00829b;
     cursor: pointer;
 }
+
+/* Customize the label (the container) */
+.container {
+    display: flex;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /* Hide the browser's default radio button */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+/* Create a custom radio button */
+.selection {
+    background: none;
+    border: 1px solid #000000;
+    border-radius: var(--radius);
+    padding: 10px;
+    align-content: center;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .selection {
+    border: 2px solid #203C41;
+    padding: 9px;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .selection {
+    background-color: #00829b20;
+    border: 2px solid var(--button-blue-hover);
+    padding: 9px;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.selection:after {
+    background-color: #00829b20;
+    border: 2px solid var(--button-blue-hover);
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .selection:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .selection:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+} 
