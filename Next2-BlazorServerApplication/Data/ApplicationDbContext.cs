@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Next2_BlazorServerApplication.Pages
+namespace Next2_BlazorServerApplication.Data
 {
 	public class ApplicationDbContext : DbContext
 	{
