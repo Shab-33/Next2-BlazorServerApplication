@@ -102,6 +102,7 @@ h1 {
 
 .auth-a:hover {
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .text-l {

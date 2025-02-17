@@ -9,7 +9,10 @@
     <InputText class="auth-input" @bind-Value="@password"></InputText>
     <label class="required-field text-l">Confirm password:</label>
     <InputText class="auth-input" @bind-Value="@password"></InputText>
-    <a href="Login" class="margin-t-50 auth-a">Already have an account? <span style="text-decoration:underline; font-weight:bold;">Log in</span></a>
+    <span class="margin-t-50" style=" padding-top:1px">
+        Already have an account?
+        <a href="Login" class="margin-t-50 auth-a" style="font-weight:bold;">Log in</a>
+    </span>
     <div class="container-space-between height-100">
         <a href="" class="white-button margin-t-50 no-link">
             <i class="fa-solid fa-caret-left"></i> Back

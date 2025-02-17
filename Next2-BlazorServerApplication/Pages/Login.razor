@@ -7,7 +7,10 @@
     <InputText class="auth-input" @bind-Value="@username"></InputText>
     <label class="required-field text-l">Password:</label>
     <InputText class="auth-input" @bind-Value="@password"></InputText>
-    <a href="Register" class="margin-t-50 auth-a">Don't have an account? <span style="text-decoration:underline; font-weight:bold;">Create one</span></a>
+    <span class="margin-t-50" style=" padding-top:1px">
+        Don't have an account?
+        <a href="Register" class="margin-t-50 auth-a" style="font-weight:bold;">Register</a>
+    </span>
     <div class="container-space-between height-100">
         <a href="" class="white-button margin-t-50 no-link">
             <i class="fa-solid fa-caret-left"></i> Back
